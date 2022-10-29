@@ -1,0 +1,475 @@
+/*Fondo de la pagina*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*Cuerpo de la pagina*/
+
+body {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-family: 'roboto', sans-serif;
+    margin: 0;
+    height: 100vh;
+}
+
+/*Encabezado*/
+
+.contenedor {
+   display: flex;
+   flex-direction: column;
+   height: auto;
+}
+
+.contenedor > div,  
+.contenedor .contenido, 
+.contenedor .sidebar {
+    background: rgb(255, 255, 255);
+    padding: 20px;
+}
+
+.contenedor .footer {
+    background: rgb(255, 255, 255);
+}
+
+.contenedor .header {
+    background: #12203e;
+    color: #fff;
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+
+.header {
+    display: flex;
+    max-height: 70px;
+    width: 100%;
+    padding: 10px;
+    padding-left: 0;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+}
+
+/*Encabezado(BARRA DE NAVEGACION)*/
+
+.nav-link {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.nav-link {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-link::before,
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #faa43d;
+    transform: scale(0);
+    transition: transform .25s;
+    -webkit-transform: .25s;
+    -moz-transform: .25s;
+    -ms-transform: .25s;
+    -o-transform: .25s;
+}
+
+.nav-link::before {
+    top: -3px;
+    transform-origin: left;
+}
+
+.nav-link::after {
+    bottom: -3px;
+    transform-origin: right;
+}
+
+.nav-link:hover::before,
+.nav-link:hover::after {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+}
+
+/*Texto cambiante*/
+.hero {
+    display: flex;
+    margin-bottom: 15px;
+    overflow: hidden;
+    padding-top: 20px;
+    user-select: none;
+}
+
+.hero .static-txt{
+    color: #fff;
+    font-size: 60px;
+    font-weight: 400;
+    user-select: unset;
+}
+
+.hero .dynamic-txts{
+    margin-left: 15px;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+    user-select: unset;
+}
+
+.dynamic-txts li{
+    list-style: none;
+    color: #fff;
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: slide 12s steps(4) infinite;
+    -webkit-animation: slide 12s steps(4) infinite;
+    user-select: unset;
+}
+
+.dynamic-txts{
+    margin: 5;
+    padding-top: 10px;
+    user-select: unset;
+}
+
+.static-txt{
+    margin: 5;
+    padding-top: 20px;
+    user-select: unset;
+}
+
+.sobre-mi {
+    padding: 10px;
+    color: #fff;
+    background: #12203e;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.sobre-mi-informacion {
+    padding: 10px;
+    color: black;
+}
+
+@keyframes slide {
+    100%{
+        top: -360px;
+    }
+}
+.dynamic-txts li span{
+    position: relative;
+    margin: 10px 0;
+    line-height: 90px;
+}
+.dynamic-txts li span::after{
+    content:'';
+    position:absolute;
+    left: 0;
+    height: 117%;
+    width: 100%;
+    background: #12203e;
+    border-left: 2px solid #16f37d;
+    animation: typing 3s steps(10) infinite;
+    -webkit-animation: typing 3s steps(10) infinite;
+}
+
+@keyframes typing{
+    40%, 60%{
+        left: calc(100% + 30px);
+    }
+    100%{
+        left: 0;
+    }
+}
+
+/*Encabezado(LOGO)*/
+
+.logo {
+    display: flex;
+    padding-right: 20px;
+    align-items: center;
+}
+
+.logo img {
+    height: 90px;
+    margin-right: 20px;
+    padding-left: 0;
+}
+
+/*Encabezado(WIDGETS)*/
+
+.proyectos {
+    padding-bottom: 20px;
+}
+
+.contenido {
+    width: 70%;
+    margin-bottom: 10px;
+}
+
+.contenido p {
+    margin-bottom: 25px;
+}
+
+.contenedor .widget-1 {
+    color: #fff;
+    height: 500px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.widget {
+    margin: 10px;
+    background-color: rgb(138, 138, 138);
+    width: 600px;
+}
+
+.widget h1{
+    font-size: 3rem;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.widget p{
+    font-size: 20px;
+    margin: 25px;
+}
+
+/*Encabezado(SIDE-BAR)*/
+
+.contenedor .sidebar {
+    background: #faa43d;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    height: 50%;
+    width: 30%;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+/*Pie de Pagina*/
+
+.footer {
+    background: #12203e;
+    color: #fff;
+    width: 100%;
+    margin-top: 30px;
+    bottom: 0;
+}
+
+/*Redes sociales*/
+
+.footer-redes {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.link {
+    text-decoration: none;
+    color: #b7b7b7;
+    margin: 10px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(28, 28, 28);
+    border-radius: 10px;
+    position: relative;
+    transition: 0.4s;
+}
+
+.link:hover {
+    transform: rotate(45deg);
+}
+
+.link::before {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: #373737;
+    border-radius: 10px;
+    transition: opasity 0.2s;
+}
+
+.link:hover::before {
+    opacity: 0.4;
+}
+
+.link:nth-child(1)::before {
+    background: #c32aa3;
+}
+
+.link:nth-child(2)::before {
+    background: #1da1f2;
+}
+
+.link:nth-child(3)::before {
+    background: #25d366;
+}
+
+.link:hover::before {
+    transform: translate(-4px, -4px);
+    filter: blur(10px);
+}
+
+.link i {
+    font-size: 1.7em;
+    transition: all 0.4s;
+}
+
+.link:hover i {
+    color: #c8c8c8;
+    transform: rotate(-45deg);
+}
+
+.link:hover i.instagram {
+    color: #c32aa3;
+}
+
+.link:hover i.twitter {
+    color: #1da1f2;
+}
+
+.link:hover i.whatsapp {
+    color: #25d366;
+}
+
+/*Display-flex*/
+
+.display-flex {
+    display: flex;
+    justify-content: flex-end;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: 70px;
+}
+
+/* Menu-Bars*/
+/* Estilos para el ícono del Menú */
+.icono-menu{
+    margin: 40px 50px;
+    position: relative;
+    z-index: 200;
+}
+
+.icono-menu img{
+    vertical-align: top;
+    width: 40px;
+    cursor: pointer;
+}
+
+/* Estilos para el contenedor del Menú */
+.cont-menu{
+    background-color: #12203e;
+    box-shadow: 2px 0px 5px 2px #023f65;
+    width: 400px;
+    height: 100%;
+    position: absolute;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transition: all .5s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos por agregar en JavaScript */
+.active{
+    transform: translate(600px);
+    -webkit-transform: translate(600px);
+    -moz-transform: translate(600px);
+    -ms-transform: translate(600px);
+    -o-transform: translate(600px);
+}
+
+/* Estilos para el listado del Menú */
+.cont-menu ul{
+    padding: 100px 0px 20px 0px;
+    list-style: none;
+}
+
+.cont-menu ul li{
+    color: rgb(255, 255, 255);
+    display: block;
+    font-size: 25px;
+    text-decoration: none;
+    padding: 10px 50px;
+    cursor: pointer;
+}
+
+.cont-menu .footer-redes{
+    position: absolute;
+    bottom: 0;
+    align-self: center;
+}
+
+/*Cambiar resolucion*/
+@media screen and (min-width: 768px) {
+    .Menu-desplegable {
+        display: none;
+    }
+}
+
+/*Cambiar resolucion*/
+@media screen and (max-width: 1270px) {
+    .Menu-desplegable{
+        display: block;
+    }
+    .nav-bar{
+        display: none;
+    }
+    .iam{
+        display: none;
+    }
+}
+
+@media  screen and (min-width: 600px) {
+  .footer{
+    position: relative;
+    bottom: 0;
+  }
+  .contenedor{
+    margin-bottom: 0;
+  }
+  .display-flex{
+    margin-top: 75px;
+  }
+  .sidebar{
+    height: 50px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+  }
+}
